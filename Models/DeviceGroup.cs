@@ -9,5 +9,8 @@ namespace stackspite.Models{
 
         public long LocationId {get; set;}
 
+        [ForeignKey("LocationId")]
+        public virtual Location Location {get; set;}
+
     }
 }
