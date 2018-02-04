@@ -20,13 +20,17 @@ namespace stackspite.Data
         public DbSet<Location> Locations {get; set;}
         public DbSet<Manufacturer> Manufacturers {get; set;}
         public DbSet<Make> Makes {get; set;}
-        
+        public DbSet<HierarchyLayer> HierarchyLayer {get; set;}
         
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            => optionsBuilder
+                .UseMySql(@Environment.GetEnvironmentVariable("MYSQL_CONNECTION_STRING"));
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

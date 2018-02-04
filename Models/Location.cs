@@ -16,7 +16,7 @@ namespace stackspite.Models{
         public string ContactName {get; set;}
         public string ContactEmail{get;set;}
         //Foreign Key
-        public long? ApplicationUserId {get; set;}
+        public string ApplicationUserId {get; set;}
 
         [ForeignKey("ApplicationUserId")]
         public virtual ApplicationUser ResponsibleUser {get; set;}
