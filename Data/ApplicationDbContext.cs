@@ -10,6 +10,19 @@ namespace stackspite.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+        public DbSet<Firewall> Firewalls {get; set;}
+        public DbSet<FirewallGroup> FirewallGroups {get; set;}
+        public DbSet<Router> Routers {get; set;}
+        public DbSet<RouterGroup> RouterGroups {get; set;}
+        public DbSet<Switch> Switches {get; set;}
+        public DbSet<SwitchGroup> SwitchGroups {get; set;}
+        public DbSet<Location> Locations {get; set;}
+        public DbSet<Manufacturer> Manufacturers {get; set;}
+        public DbSet<Make> Makes {get; set;}
+        
+        
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
